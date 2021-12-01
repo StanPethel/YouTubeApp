@@ -51,5 +51,8 @@
   "bugs": {
     "url": "https://github.com/StanPethel/YouTubeApp/issues"
   },
-  "homepage": "https://github.com/StanPethel/YouTubeApp#readme"
+  "homepage": "https://github.com/StanPethel/YouTubeApp#readme",
+  "devDependencies": {
+    "@types/react-dom": "^17.0.11"
+  }
 }
