@@ -17,8 +17,9 @@ function App () {
     const [replies,setReply] = useState([])
 
     useEffect(() => {
-       // getyouTubeData();
-       getAllComments();
+        setyouTubedata();
+        getYouTubeData();
+        getAllComments();
     }, [])
 
     async function getAllComments(){
@@ -29,36 +30,35 @@ function App () {
 
     async function getAllReplies(){
         const response =await axios.get (`http://localhost:5000/api/comments/${commentId}`);
+        console.log(response.data);
+        setCommentId(respone.data)
+
     }
 
-    async function getyouTubeData(){
+    async function getYouTubeData(){
         const response = await axios.get (`https://www.googleapis.com/youtube/v3/search?key=AIzaSyBt5mU5fYM68eY2fAm67G1gEfwHRzN_D6s&maxResults=30&q=${searchTerm}&type=video`);
         console.log(response.data);
-        setyouTubedata(response.data);
+        setYouTubedata(response.data);
     }
 
-    // useEffect(() =>{
-    //     setSearchTerm(
-    //         videos.filter((video) =>
-    //         video.name.toLowerCase().includes(search.toLowerCase())
-    //         )
-    //     );
-    // },  [search,videos]);
-    //     if(loading){
-    //         return<p>Loading videos...</p>
-    // }
-    
-    function searchResults(){
-        <input type = "text" placeholder= "SearchVideos" onChange = {(e) => setSearchTerm(e.target.value)}/>
-        {setSearchTerm.map((video,idx) => (
-            <videoDetail key = {idx} {...video}/>
-        ))}
+    const VideoOnChange =() => {
+        setSearchTerm();
     }
+
+    
+    // function searchResults(){
+    //     <input type = "text" placeholder= "SearchVideos" onChange = {(e) => setSearchTerm(e.target.value)}/>
+    //     {setSearchTerm.map((video,idx) => (
+    //         <videoDetail key = {idx} {...video}/>
+    //     ))}
+    // }
     
         
 
     return(
         <div className = "App">
+            <p>{searchTerm}</p>
+            <input onChange = {VideoOnChange} type="search" id="form1" className="form-control" />
             <ul>
                 {comments.map((comment)=> (comment.videoId===videoId)?<li>{comment.text}<ul> {comment.replies.map((reply)=> <li>{reply.text}</li>)}</ul></li>:null)}
             </ul>
@@ -68,7 +68,7 @@ function App () {
                 <div>
                     <h1></h1>
                     <Titlebar/>
-                    <SearchBar SearchVideos = {searchResults} />
+                    <SearchBar/>
                     <Footer/>
                 </div>
             }
