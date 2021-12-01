@@ -60,9 +60,9 @@ function App () {
     return(
         <div className = "App">
             <ul>
-                {comments.map((comment)=> (comment.videoId===videoId)?<li>{comment.text}<ul> {comment.replies.map((reply)=> (reply.commentId===commentId)?<li>{reply.text}</li>:null)}</ul></li>:null)}
+                {comments.map((comment)=> (comment.videoId===videoId)?<li>{comment.text}<ul> {comment.replies.map((reply)=> <li>{reply.text}</li>)}</ul></li>:null)}
             </ul>
-         
+            
 
             {youTubeData &&
                 <div>
