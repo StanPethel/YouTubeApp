@@ -7,17 +7,14 @@ import SearchBar from './components/SearchBar/Searchbar';
 
 function App () {
 
-    const[youTubeData, setyouTubedata] = useState(null);
-    const [loading,setLoading] = useState(false);
-    const [search, setSearch] = useState ("");
-    const[searchTerm, setSearchTerm] = useState("out door living");
+    const [youTubeData, setYouTubedata] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("aUIR4iwK4-_1E9PnEjaXfS3NaNY");
     const [videoId, setVideoId] = useState("PyMlV5_HRWk");
     const [comments, setComments] = useState([]);
     const [commentId, setCommentId] = useState([]);
     const [replies,setReply] = useState([])
 
     useEffect(() => {
-        setyouTubedata();
         getYouTubeData();
         getAllComments();
     }, [])
@@ -41,34 +38,20 @@ function App () {
         setYouTubedata(response.data);
     }
 
-    const VideoOnChange =() => {
-        setSearchTerm();
+    function handleNewVideo(newVideo){
+        setSearchTerm(newVideo)
     }
-
-    
-    // function searchResults(){
-    //     <input type = "text" placeholder= "SearchVideos" onChange = {(e) => setSearchTerm(e.target.value)}/>
-    //     {setSearchTerm.map((video,idx) => (
-    //         <videoDetail key = {idx} {...video}/>
-    //     ))}
-    // }
-    
         
 
     return(
         <div className = "App">
-            <p>{searchTerm}</p>
-            <input onChange = {VideoOnChange} type="search" id="form1" className="form-control" />
-            <ul>
-                {comments.map((comment)=> (comment.videoId===videoId)?<li>{comment.text}<ul> {comment.replies.map((reply)=> <li>{reply.text}</li>)}</ul></li>:null)}
-            </ul>
-            
-
             {youTubeData &&
                 <div>
-                    <h1></h1>
                     <Titlebar/>
-                    <SearchBar/>
+                    <SearchBar />
+                        <ul>
+                            {comments.map((comment)=> (comment.videoId===videoId)?<li>{comment.text}<ul> {comment.replies.map((reply)=> <li>{reply.text}</li>)}</ul></li>:null)}
+                        </ul>
                     <Footer/>
                 </div>
             }
