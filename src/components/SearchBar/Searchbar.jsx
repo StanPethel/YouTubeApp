@@ -1,14 +1,22 @@
-import React, { Component } from "react";
+import React, {useState} from'react';
+import './Searchbar.css';
 
-
-class SearchBar extends Component{
-    constructor(props){
-
+const SearchBar = (props) =>{
+    const [searchTerm, setSearchTerm] = useState("")
+    const changeHandler = (event) =>{
+        setSearchTerm(event.target.value)
     }
-
-    handleChange = (event) =>{
-        if (event.target.value ==)
+    const submitHandler = (event) => {
+        event.preventDefault()
+        props.value(searchTerm)
     }
+    return(
+        <form> <input type ="search" id="form1" ClassName="form-controle" onChange = {changeHandler} />
+            <label ClassName ="form-label" htmlFor="form1">Search</label> 
+            <button type= "submit" onClick= {submitHandler}> Search</button> 
+        </form>
+        
+    )
 }
 
- export default SearchBar;
+export default SearchBar;
