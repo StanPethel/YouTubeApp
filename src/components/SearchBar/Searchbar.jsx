@@ -12,7 +12,7 @@ const SearchBar = (props) =>{
     }
     return(
         <form> <input type ="search" id="form1" ClassName="form-controle" onChange = {changeHandler} />
-            <label ClassName ="form-label" htmlFor="form1">Search</label> 
+            <label ClassName ="form-label" htmlFor="form1"></label> 
             <button type= "submit" onClick= {submitHandler}> Search</button> 
         </form>
         

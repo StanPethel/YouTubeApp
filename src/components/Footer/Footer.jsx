@@ -6,7 +6,7 @@ function Footer (){
             <nav className="navbar navbar-light bg-light">
                 <div className="container">
                     <a className="navbar-brand" href="#">
-                    <label className="form-label" htmlFor="form1">DCC YouTube</label>
+                    <h5>DCC YouTube</h5>
                     </a>
                 </div>
             </nav>
