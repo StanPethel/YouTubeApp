@@ -1,16 +1,21 @@
 import React from "react";
 
+import  './Footer.css';
+
 function Footer (){
     return(
-        <div>
-            <nav className="navbar navbar-light bg-light">
-                <div className="container">
-                    <a className="navbar-brand" href="#">
-                    <h5>DCC YouTube</h5>
-                    </a>
-                </div>
-            </nav>
-        </div>
+        <section>
+          <hr />
+          <section>
+            Elizabeth Thompson
+          </section>
+          <section>
+            Stanley Pethel          
+          </section>
+          <section> 
+            Mon'te Smith
+          </section>
+        </section>
     )
 }
 
