@@ -7,7 +7,7 @@ function Titlebar() {
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-link active" aria-current="page" >NavBar</a>
+                        <a className="nav-link active" aria-current="page" >Enter Video Title</a>
                     </div>
                     </div>
                 </div>
