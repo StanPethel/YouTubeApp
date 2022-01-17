@@ -1,0 +1,21 @@
+.sidebar {
+    height: 200px;
+    width: 150px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    float: right;
+    margin-top: -300px;
+    padding-top: 40px;
+  }
+  
+  .sidebar div {
+    padding: 8px;
+    font-size: 24px;
+    display: block;
+  }
+  
+  .body-text {
+    margin-right: 150px;
+    font-size: 18px;
+  }

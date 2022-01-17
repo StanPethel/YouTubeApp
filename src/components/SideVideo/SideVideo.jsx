@@ -1,9 +1,7 @@
 import React from 'react';
-import './videodisplay.css';
+import './sideVideo.css';
 
-
-
-const VideoDisplay = (props) => {
+const SideVideo = (props) => {
     let urlLink = `https://www.youtube.com/embed/${props.videoId}?autoplay=1&origin=http://example.com`
     return(
         <div className= "videodisplay">
@@ -12,8 +10,14 @@ const VideoDisplay = (props) => {
     frameborder="0">
         
     </iframe>
+        {
+            props.sideVideoIds.map((item) => 
+                <div>
+                    <label>{ item.snippet.title }</label>
+                </div>
+            ) }
     </div>
     )
 }
 
-export default VideoDisplay;
+export default SideVideo;

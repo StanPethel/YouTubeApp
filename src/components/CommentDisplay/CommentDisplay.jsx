@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import './comment.css';
 const CommentDisplay = (props) =>{
 
     const [comment, setComment] = useState("")
@@ -16,9 +16,11 @@ const CommentDisplay = (props) =>{
 
     return(
         <form> 
-            <input type ="search" id="form1" ClassName="form-controle" onChange = {changeHandler} value={comment} />
+            <div className = "commentdisplay">
+            <input className="input-comment" type ="search" id="form1" onChange = {changeHandler} value={comment} />
             <label ClassName ="form-label" htmlFor="form1"></label> 
-            <button type= "submit" onClick= {submitHandler}> Submit</button> 
+            <button className="commentbutton" type= "submit" onClick= {submitHandler}> Comment</button> 
+            </div>
         </form>
         
     )
