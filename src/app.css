@@ -1,6 +1,6 @@
 
 col-align {
-    text-align: center;
+    text-align: right;
 
 }
 
@@ -14,12 +14,7 @@ center {
     transform: translate(-50%, -50%);
 }
 
-.background {
-    background-image: url("/background.jpg");
- }
 
 row-space {
     margin-bottom: App;
 }
-
-export default app.css;
