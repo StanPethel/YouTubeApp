@@ -12,6 +12,7 @@ const CommentDisplay = (props) =>{
     const submitHandler = (event) => {
         event.preventDefault()
         props.postComment(comment)
+        console.log('postComment | ', comment)
     }
 
     return(
